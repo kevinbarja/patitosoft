@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="PatitoSoft">
+  <Localization>
+    <LocalizationGroup Name="Exceptions">
+      <LocalizationGroup Name="UserVisibleExceptions">
+        <LocalizationItem Name="LogonAttemptsAmountedToLimitWin" Value="Many unsuccessful login attempts, the application will now be closed. Please consider contacting an administrator about your login details." />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="20.1.3.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

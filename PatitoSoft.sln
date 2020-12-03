@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatitoSoft.Module", "PatitoSoft\PatitoSoft.Module\PatitoSoft.Module.csproj", "{3D5C57D5-C60A-4397-8C45-12DC6EDF257F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatitoSoft.Module.Web", "PatitoSoft\PatitoSoft.Module.Web\PatitoSoft.Module.Web.csproj", "{D507FA97-A85A-40F0-A5A5-729E60617741}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatitoSoft.Web", "PatitoSoft\PatitoSoft.Web\PatitoSoft.Web.csproj", "{3513D57D-CB42-4E45-91E4-6977B87AD911}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatitoSoft.Module.Win", "PatitoSoft\PatitoSoft.Module.Win\PatitoSoft.Module.Win.csproj", "{F348EB81-F51B-4B3C-8DC3-AB42AD4315C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatitoSoft.Win", "PatitoSoft\PatitoSoft.Win\PatitoSoft.Win.csproj", "{78D34AB4-FE6C-4358-88F6-1D9BBD52BF60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		EasyTest|Any CPU = EasyTest|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D5C57D5-C60A-4397-8C45-12DC6EDF257F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D5C57D5-C60A-4397-8C45-12DC6EDF257F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D5C57D5-C60A-4397-8C45-12DC6EDF257F}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{3D5C57D5-C60A-4397-8C45-12DC6EDF257F}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{3D5C57D5-C60A-4397-8C45-12DC6EDF257F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D5C57D5-C60A-4397-8C45-12DC6EDF257F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D507FA97-A85A-40F0-A5A5-729E60617741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D507FA97-A85A-40F0-A5A5-729E60617741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D507FA97-A85A-40F0-A5A5-729E60617741}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{D507FA97-A85A-40F0-A5A5-729E60617741}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{D507FA97-A85A-40F0-A5A5-729E60617741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D507FA97-A85A-40F0-A5A5-729E60617741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3513D57D-CB42-4E45-91E4-6977B87AD911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3513D57D-CB42-4E45-91E4-6977B87AD911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3513D57D-CB42-4E45-91E4-6977B87AD911}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{3513D57D-CB42-4E45-91E4-6977B87AD911}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{3513D57D-CB42-4E45-91E4-6977B87AD911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3513D57D-CB42-4E45-91E4-6977B87AD911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F348EB81-F51B-4B3C-8DC3-AB42AD4315C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F348EB81-F51B-4B3C-8DC3-AB42AD4315C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F348EB81-F51B-4B3C-8DC3-AB42AD4315C5}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{F348EB81-F51B-4B3C-8DC3-AB42AD4315C5}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{F348EB81-F51B-4B3C-8DC3-AB42AD4315C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F348EB81-F51B-4B3C-8DC3-AB42AD4315C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78D34AB4-FE6C-4358-88F6-1D9BBD52BF60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78D34AB4-FE6C-4358-88F6-1D9BBD52BF60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78D34AB4-FE6C-4358-88F6-1D9BBD52BF60}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{78D34AB4-FE6C-4358-88F6-1D9BBD52BF60}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{78D34AB4-FE6C-4358-88F6-1D9BBD52BF60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78D34AB4-FE6C-4358-88F6-1D9BBD52BF60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A54090FA-9355-4D59-AEAC-5EDFD18D1CF1}
+	EndGlobalSection
+EndGlobal
