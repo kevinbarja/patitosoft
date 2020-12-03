@@ -30,6 +30,7 @@ namespace PatitoSoft.Module.BusinessObjects
         {
             base.AfterConstruction();
             MaxLogonAttemptCount = 5;
+            Id = 1;
         }
 
 
@@ -41,6 +42,15 @@ namespace PatitoSoft.Module.BusinessObjects
             get { return maxLogonAttemptCount; }
             set { maxLogonAttemptCount = value; }
         }
+
+        private int id;
+        [Browsable(false)]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
 
     }
 }

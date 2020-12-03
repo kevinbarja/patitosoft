@@ -3,7 +3,7 @@
   <Localization>
     <LocalizationGroup Name="Exceptions">
       <LocalizationGroup Name="UserVisibleExceptions">
-        <LocalizationItem Name="LogonAttemptsAmountedToLimitWin" Value="Many unsuccessful login attempts, the application will now be closed. Please consider contacting an administrator about your login details." />
+        <LocalizationItem Name="LogonAttemptsAmountedToLimitWin" Value="Muchos intentos de inicio de sesión fallidos, la aplicación ahora se cerrará. Considere comunicarse con un administrador acerca de sus datos de inicio de sesión." />
       </LocalizationGroup>
     </LocalizationGroup>
   </Localization>

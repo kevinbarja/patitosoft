@@ -32,23 +32,25 @@ namespace PatitoSoft.Win {
 			ExecuteStartupLogicBeforeClosingLogonWindow = true;
 
             //TOUCH
-            int maxLogonAttemptCount = 5;
-            /*
-            string queryString = "SELECT TOP 1 MaxLogonAttemptCount FROM SecurityConfig";
-            using (SqlConnection connection =
-                   new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
+            int maxLogonAttemptCount = 3;
+            try
             {
-                connection.Open();
-                SqlCommand command = new SqlCommand(queryString, connection);
-                using (SqlDataReader reader = command.ExecuteReader())
+                string queryString = "SELECT TOP 1 MaxLogonAttemptCount FROM SecurityConfig";
+                using (SqlConnection connection =
+                       new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
-                    if (reader.Read())
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(queryString, connection);
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        maxLogonAttemptCount = reader.GetInt32(0);
+                        if (reader.Read())
+                        {
+                            maxLogonAttemptCount = reader.GetInt32(0);
+                        }
                     }
                 }
-            }
-            */
+            }catch (Exception ignoreException){}
+
             MaxLogonAttemptCount = maxLogonAttemptCount;
         }
         #endregion
@@ -89,13 +91,6 @@ namespace PatitoSoft.Win {
 				throw new InvalidOperationException(message);
             }
 #endif
-        }
-
-        protected override void OnObjectSpaceCreated(IObjectSpace objectSpace)
-        {
-            base.OnObjectSpaceCreated(objectSpace);
-            //var config = objectSpace.GetObjects<SecurityConfig>();
-
         }
     }
 }

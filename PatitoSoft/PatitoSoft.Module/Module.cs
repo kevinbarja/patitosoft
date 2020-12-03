@@ -17,6 +17,7 @@ using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.ExpressApp.Validation;
+using PatitoSoft.Module.BusinessObjects;
 
 namespace PatitoSoft.Module {
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ModuleBase.
@@ -24,6 +25,8 @@ namespace PatitoSoft.Module {
         public PatitoSoftModule() {
             InitializeComponent();
 			BaseObject.OidInitializationMode = OidInitializationMode.AfterConstruction;
+            AdditionalExportedTypes.AddRange(
+                        new Type[] { typeof(SecurityConfig) });
         }
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
             ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);
@@ -42,6 +45,8 @@ namespace PatitoSoft.Module {
         public override void CustomizeTypesInfo(ITypesInfo typesInfo) {
             base.CustomizeTypesInfo(typesInfo);
             CalculatedPersistentAliasHelper.CustomizeTypesInfo(typesInfo);
+            //typesInfo.RegisterEntity("algo", typeof(SecurityConfig));
         }
+
     }
 }

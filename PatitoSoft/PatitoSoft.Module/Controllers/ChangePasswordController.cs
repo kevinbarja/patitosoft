@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq;
+using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.SystemModule;
 using DevExpress.Persistent.Validation;
+using PatitoSoft.Module.BusinessObjects;
 
 //TOUCH
 namespace PatitoSoft.Module.Controllers
@@ -21,14 +23,13 @@ namespace PatitoSoft.Module.Controllers
         {
             String id = View.Id;
             base.OnActivated();
-            RuleRegularExpression ruleExpresionChangePassword = (RuleRegularExpression) Validator.RuleSet.First(x => x.Id == "ChangePassword");
-            IRuleRegularExpressionProperties ruleChangePassword = ruleExpresionChangePassword.Properties;
-            //TODO: Build regular expresion by security config.
-            String pattern = "^(?=.*[a-zA-Z])(?=.*\\d).{6,}$";
-            String message = "New password must consist of at least 6 alphanumeric characters.";
+            //TODO: Build regular expresion using security config.
+            IObjectSpace objectSpace = Application.CreateObjectSpace(typeof(SecurityConfig));
+            var config = objectSpace.FindObject<SecurityConfig>(new BinaryOperator("Id", 1));
 
-            ruleChangePassword.Pattern = pattern;
-            ruleChangePassword.MessageTemplateMustMatchPattern = "ruleChangePassword: " + message;
+
+            String pattern = "^(?=.*[a-zA-Z])(?=.*\\d).{3,}$";
+            String message = "La nueva contraseña debe tener al menos 3 caracteres alfanuméricos";
 
             
             RuleRegularExpression ruleExpresionChangePasswordOnLogon = (RuleRegularExpression)Validator.RuleSet.First(x => x.Id == "ChangePasswordOnLogon");
@@ -58,6 +59,8 @@ namespace PatitoSoft.Module.Controllers
         {
             ;
             //Get current user
+            //SecuritySystem.CurrentUserId;
+
             //Store in a new table today and username
             //Create a store procedure that check password date.
         }
