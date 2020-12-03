@@ -31,7 +31,7 @@ namespace PatitoSoft.Win {
 			SplashScreen = new DXSplashScreen(typeof(XafSplashScreen), new DefaultOverlayFormOptions());
 			ExecuteStartupLogicBeforeClosingLogonWindow = true;
 
-            
+            //TOUCH
             int maxLogonAttemptCount = 5;
             /*
             string queryString = "SELECT TOP 1 MaxLogonAttemptCount FROM SecurityConfig";

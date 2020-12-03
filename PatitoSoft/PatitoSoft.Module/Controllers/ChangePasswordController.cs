@@ -4,6 +4,7 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.SystemModule;
 using DevExpress.Persistent.Validation;
 
+//TOUCH
 namespace PatitoSoft.Module.Controllers
 {
     public partial class ChangePasswordController : ViewController
@@ -15,7 +16,6 @@ namespace PatitoSoft.Module.Controllers
         {
             InitializeComponent();
             TargetViewId = "ChangePasswordParameters_DetailView;ChangePasswordOnLogonParameters_DetailView;ResetPasswordParameters_DetailView";
-            //TargetObjectType = typeof(DevExpress.ExpressApp.Security.ChangePasswordParameters);
         }
         protected override void OnActivated()
         {

@@ -12,6 +12,7 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 
+//TOUCH
 namespace PatitoSoft.Module.BusinessObjects
 {
     [DefaultClassOptions]
