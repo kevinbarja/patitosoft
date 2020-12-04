@@ -104,7 +104,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\PasswordHistory.cs" />
+    <Compile Include="BusinessObjects\PhoneBook.cs" />
     <Compile Include="BusinessObjects\SecurityConfig.cs" />
+    <Compile Include="Controllers\CaducityPasswordController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\CaducityPasswordController.Designer.cs">
+      <DependentUpon>CaducityPasswordController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ChangePasswordController.cs">
       <SubType>Component</SubType>
     </Compile>

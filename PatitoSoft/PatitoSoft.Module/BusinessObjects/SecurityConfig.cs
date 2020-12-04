@@ -1,25 +1,13 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using DevExpress.Xpo;
-using DevExpress.ExpressApp;
+﻿using DevExpress.Xpo;
 using System.ComponentModel;
 using DevExpress.ExpressApp.DC;
-using DevExpress.Data.Filtering;
 using DevExpress.Persistent.Base;
-using System.Collections.Generic;
-using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
-using DevExpress.Persistent.Validation;
 
-//TOUCH
 namespace PatitoSoft.Module.BusinessObjects
 {
     [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
-    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
-    //[Persistent("DatabaseTableName")]
+    [XafDisplayName("Configuración de seguridad")]
     public class SecurityConfig : BaseObject
     { 
         public SecurityConfig(Session session)
@@ -30,6 +18,7 @@ namespace PatitoSoft.Module.BusinessObjects
         {
             base.AfterConstruction();
             MaxLogonAttemptCount = 5;
+            PasswordCaducity = 7;
             Id = 1;
         }
 
@@ -43,6 +32,15 @@ namespace PatitoSoft.Module.BusinessObjects
             set { maxLogonAttemptCount = value; }
         }
 
+        private int passwordCaducity;
+
+        [XafDisplayName("Caducidad de contraseña (días)")]
+        public int PasswordCaducity
+        {
+            get { return passwordCaducity; }
+            set { passwordCaducity = value; }
+        }
+
         private int id;
         [Browsable(false)]
         public int Id
@@ -50,7 +48,6 @@ namespace PatitoSoft.Module.BusinessObjects
             get { return id; }
             set { id = value; }
         }
-
 
     }
 }

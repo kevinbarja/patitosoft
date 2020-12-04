@@ -11,6 +11,7 @@ using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.BaseImpl.PermissionPolicy;
+using PatitoSoft.Module.BusinessObjects;
 
 namespace PatitoSoft.Module.DatabaseUpdate {
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.Updating.ModuleUpdater
@@ -50,7 +51,17 @@ namespace PatitoSoft.Module.DatabaseUpdate {
             }
             adminRole.IsAdministrative = true;
 			userAdmin.Roles.Add(adminRole);
-            ObjectSpace.CommitChanges(); //This line persists created object(s).
+
+            // Create default config
+            var config = ObjectSpace.FindObject<SecurityConfig>(new BinaryOperator("Id", 1));
+            if (config == null)
+            {
+                config = ObjectSpace.CreateObject<SecurityConfig>();
+                config.MaxLogonAttemptCount = 3;
+                config.PasswordCaducity = 15;
+                config.Id = 1;
+            }
+            ObjectSpace.CommitChanges(); //This line persists created 
         }
         public override void UpdateDatabaseBeforeUpdateSchema() {
             base.UpdateDatabaseBeforeUpdateSchema();
@@ -73,6 +84,14 @@ namespace PatitoSoft.Module.DatabaseUpdate {
                 defaultRole.AddTypePermissionsRecursively<ModelDifferenceAspect>(SecurityOperations.ReadWriteAccess, SecurityPermissionState.Allow);
 				defaultRole.AddTypePermissionsRecursively<ModelDifference>(SecurityOperations.Create, SecurityPermissionState.Allow);
                 defaultRole.AddTypePermissionsRecursively<ModelDifferenceAspect>(SecurityOperations.Create, SecurityPermissionState.Allow);
+
+
+                defaultRole.AddObjectPermission<PhoneBook>(SecurityOperations.Read, "[Oid] != ''", SecurityPermissionState.Allow);
+                defaultRole.AddObjectPermission<PhoneBook>(SecurityOperations.Write, "[Oid] != ''", SecurityPermissionState.Allow);
+                defaultRole.AddNavigationPermission(@"Application/NavigationItems/Items/Default/Items/PhoneBook_ListView", SecurityPermissionState.Allow);
+                defaultRole.AddMemberPermission<PermissionPolicyUser>(SecurityOperations.Write, "Employee", "[Oid] = CurrentUserId()", SecurityPermissionState.Allow);
+                defaultRole.AddMemberPermission<PermissionPolicyUser>(SecurityOperations.Write, "Phone", "[Oid] = CurrentUserId()", SecurityPermissionState.Allow);
+                defaultRole.AddMemberPermission<PermissionPolicyUser>(SecurityOperations.Write, "Oid", "[Oid] = CurrentUserId()", SecurityPermissionState.Allow);
             }
             return defaultRole;
         }
