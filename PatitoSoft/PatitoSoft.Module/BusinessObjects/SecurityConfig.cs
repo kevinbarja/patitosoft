@@ -3,6 +3,7 @@ using System.ComponentModel;
 using DevExpress.ExpressApp.DC;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.ExpressApp.Model;
 
 namespace PatitoSoft.Module.BusinessObjects
 {
@@ -14,14 +15,15 @@ namespace PatitoSoft.Module.BusinessObjects
             : base(session)
         {
         }
+
         public override void AfterConstruction()
         {
             base.AfterConstruction();
             MaxLogonAttemptCount = 5;
             PasswordCaducity = 7;
+            PasswordLength = 6;
             Id = 1;
         }
-
 
         private int maxLogonAttemptCount;
 
@@ -41,6 +43,24 @@ namespace PatitoSoft.Module.BusinessObjects
             set { passwordCaducity = value; }
         }
 
+        private int passwordLength;
+
+        [XafDisplayName("Longitud de contraseña")]
+        public int PasswordLength
+        {
+            get { return passwordLength; }
+            set { passwordLength = value; }
+        }
+
+        private PswComplexity passwordComplexity;
+
+        [XafDisplayName("Complejidad de la contraseña")]
+        public PswComplexity PasswordComplexity
+        {
+            get { return passwordComplexity; }
+            set { passwordComplexity = value; }
+        }
+
         private int id;
         [Browsable(false)]
         public int Id
@@ -49,5 +69,12 @@ namespace PatitoSoft.Module.BusinessObjects
             set { id = value; }
         }
 
+    }
+
+    [DefaultValue(Baja)]
+    public enum PswComplexity{
+        Baja = 0,
+        Media = 1,
+        Alta = 2
     }
 }
